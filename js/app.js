@@ -14,7 +14,8 @@
       currentPlayer = 1,
       $board = document.getElementById('board'),
       $results = document.getElementById('results'),
-      $newGameButton = document.getElementById('new-game');
+      $resultsText = $results.querySelector('#results-text'),
+      $newGameButton = $results.querySelector('#new-game');
   
          
   $board.addEventListener('click', play);
@@ -95,6 +96,7 @@
     $board.removeEventListener('click', play);
     $newGameButton.addEventListener('click', newGame);
     $results.style.display = 'block';
+    $resultsText.innerHTML = `Player ${currentPlayer} Wins!`;
   }
   
   function newGame() {
