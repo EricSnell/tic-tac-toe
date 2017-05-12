@@ -95,7 +95,7 @@
   function showResults() {
     $board.removeEventListener('click', play);
     $newGameButton.addEventListener('click', newGame);
-    $results.style.display = 'block';
+    $results.classList.remove('hidden');
     $resultsText.innerHTML = `Player ${currentPlayer} Wins!`;
   }
   
@@ -109,7 +109,7 @@
       return arr.slice();
     });
     
-    $results.style.display = 'none';
+    $results.classList.add('hidden');
     $newGameButton.removeEventListener('click', newGame);
     $board.addEventListener('click', play);
   }

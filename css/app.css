@@ -2,12 +2,20 @@ body {
   margin: 0;
   background-color: #3F51B5;
   font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
 }
 
 main {
   min-width: 350px;
   max-width: 600px;
   margin: 0 auto;
+}
+
+h1 {
+  margin: 30px 0;
+  font-size: 
 }
 
 #board {
@@ -59,21 +67,17 @@ main {
 }
 
 #results {
-  display: none;
   margin: 25px auto;
   width: 400px;
-  text-align: center;
-  color: #fff;
-  text-transform: uppercase;
   font-size: 24px;
 }
 
 #new-game {
   width: 90%;
+  height: 80px;
   border: none;
   margin-top: 20px;
   border-bottom: 5px solid #2E7D32;
-  height: 100px;
   background-color: #43A047;
   cursor: pointer;
   color: #fff;
@@ -83,4 +87,8 @@ main {
 
 #new-game:hover {
   background-color: #388E3C;
+}
+
+.hidden {
+  display: none;
 }
