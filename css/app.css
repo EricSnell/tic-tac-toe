@@ -15,7 +15,8 @@ main {
 
 h1 {
   margin: 30px 0;
-  font-size: 
+  font-size: 50px;
+  letter-spacing: 5px;
 }
 
 #board {

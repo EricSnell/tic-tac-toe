@@ -37,7 +37,9 @@
    
   function findWinner(row, column) {
     if (checkDiagonalTop() || checkDiagonalBottom() || checkRows(row) || checkColumns(column)) {
-      showResults();
+      showResults(`Player ${currentPlayer} Wins!`);
+    } else if (isDraw()) {
+      showResults('Draw');
     } else {
       changePlayer();
     }
@@ -90,16 +92,27 @@
       }
     }
     return true;
-  } 
+  }
+
+  function isDraw() {
+    for (var i = 0; i < gameBoard.length; i++) {
+      if (gameBoard[i].indexOf(null) !== -1) {
+        return;
+      }
+    }
+    return true;
+  }
   
-  function showResults() {
+  function showResults(results) {
     $board.removeEventListener('click', play);
     $newGameButton.addEventListener('click', newGame);
     $results.classList.remove('hidden');
-    $resultsText.innerHTML = `Player ${currentPlayer} Wins!`;
+    $resultsText.innerHTML = results;
   }
   
   function newGame() {
+    $results.classList.add('hidden');
+
     var $tiles = $board.querySelectorAll('.playerOne, .playerTwo');
     $tiles.forEach(function(elm) {
       elm.classList.remove('playerOne', 'playerTwo');
@@ -109,7 +122,6 @@
       return arr.slice();
     });
     
-    $results.classList.add('hidden');
     $newGameButton.removeEventListener('click', newGame);
     $board.addEventListener('click', play);
   }
