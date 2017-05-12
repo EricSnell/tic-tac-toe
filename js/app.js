@@ -103,11 +103,11 @@
     return true;
   }
   
-  function showResults(results) {
+  function showResults(resultText) {
     $board.removeEventListener('click', play);
     $newGameButton.addEventListener('click', newGame);
     $results.classList.remove('hidden');
-    $resultsText.innerHTML = results;
+    $resultsText.innerHTML = resultText;
   }
   
   function newGame() {
