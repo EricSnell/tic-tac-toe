@@ -11,16 +11,42 @@
 
   let gameBoard = game.board.map(arr => arr.slice())
   let currentPlayer = 1;
+  let computer = false;
 
   const $board = document.getElementById('board');
   const $results = document.getElementById('results');
   const $resultsText = $results.querySelector('#results-text');
   const $newGameButton = $results.querySelector('#new-game');
+  const $options = document.getElementById('options');
 
-  $board.addEventListener('click', play)
+  $options.addEventListener('click', selectPlayers);
+  $board.addEventListener('click', play);
+
+  /* FUNCTIONS FOR COMPUTER TURN 
+  -- Check Player 1's positions on board
+  -- If computer has 2 positions in either 4 directions, place turn in remaining space
+  -- If Player 1 has 2 positions in either 4 directions, place turn in remaining space
+  -- Otherwise place turn anywhere on board
+  -- If player one not on board - place turn anywhere on board
+  */
 
 
 
+
+
+
+
+
+
+
+
+  function selectPlayers(e) {
+    e.stopPropagation();
+    const { target } = e;
+    if (target.tagName === 'LABEL') {
+      computer = target.htmlFor === 'one-player';
+    }
+  }
 
   function play(event) {
     if (event.target.tagName === 'DIV') {

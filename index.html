@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,22 @@
   <link rel="stylesheet" href="css/app.css">
   <title>Tic Tac Toe</title>
 </head>
+
 <body>
-  
+
   <main>
-    
+
     <header>
       <h1>Tic Tac Toe</h1>
     </header>
+
+    <section id="options">
+      <h2 class="options__header">How many players?</h2>
+      <label for="one-player" class="options__choice">1 Player</label>
+      <input type="radio" id="one-player" name="players">
+      <label for="two-player" class="options__choice">2 Players</label>
+      <input type="radio" id="two-player" name="players">
+    </section>
 
     <section id="board">
       <div class="board-tile" data-row="0" data-column="0"></div>
@@ -25,15 +35,16 @@
       <div class="board-tile" data-row="2" data-column="0"></div>
       <div class="board-tile" data-row="2" data-column="1"></div>
       <div class="board-tile" data-row="2" data-column="2"></div>
-    </section> 
-     
+    </section>
+
     <section id="results" class="hidden">
       <span id="results-text"></span>
       <button id="new-game">Play Again</button>
     </section>
-    
+
   </main>
 
   <script src="js/app.js"></script>
 </body>
+
 </html>
