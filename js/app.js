@@ -11,15 +11,18 @@
 
   let gameBoard = game.board.map(arr => arr.slice())
   let currentPlayer = 1;
+  let player1 = null;
   let computer = false;
 
   const $board = document.getElementById('board');
   const $results = document.getElementById('results');
   const $resultsText = $results.querySelector('#results-text');
   const $newGameButton = $results.querySelector('#new-game');
-  const $options = document.getElementById('options');
+  const $playerSelect = document.getElementById('players-select');
+  const $characterSelect = document.getElementById('character-select');
 
-  $options.addEventListener('click', selectPlayers);
+  $playerSelect.addEventListener('click', selectPlayers);
+  $characterSelect.addEventListener('click', selectCharacter);
   $board.addEventListener('click', play);
 
   /* FUNCTIONS FOR COMPUTER TURN 
@@ -48,6 +51,14 @@
     }
   }
 
+  function selectCharacter(e) {
+    e.stopPropagation();
+    const { target } = e;
+    if (target.tagName === 'LABEL') {
+      player1 = target.htmlFor;
+    }
+  }
+
   function play(event) {
     if (event.target.tagName === 'DIV') {
       const $tile = event.target;
@@ -58,8 +69,6 @@
         colorTile($tile);
         updateBoard(row, column);
         findWinner(row, column);
-      } else {
-        console.log('TRY AGAIN!');
       }
     }
   }
