@@ -12,6 +12,7 @@
   let gameBoard = game.board.map(arr => arr.slice())
   let currentPlayer = 1;
   let player1 = null;
+  let player2 = null;
   let computer = false;
 
   const $board = document.getElementById('board');
@@ -39,9 +40,9 @@
 
 
 
-
-
-
+  function computerTurn() {
+    console.log(gameBoard);
+  }
 
   function selectPlayers(e) {
     e.stopPropagation();
@@ -55,7 +56,11 @@
     e.stopPropagation();
     const { target } = e;
     if (target.tagName === 'LABEL') {
-      player1 = target.htmlFor;
+      const char1 = target.htmlFor;
+      const char2 = char1 === 'x' ? 'o' : 'x';
+      player1 = char1;
+      if (computer) computer = char2;
+      else player2 = char2;
     }
   }
 
@@ -86,9 +91,11 @@
   function colorTile(tile) {
     if (currentPlayer === 1) {
       tile.classList.add('playerOne');
+      tile.innerHTML = player1;
     }
     else {
       tile.classList.add('playerTwo');
+      tile.innerHTML = computer || player2;
     }
   }
 
@@ -97,7 +104,16 @@
   }
 
   function changePlayer() {
-    currentPlayer = (currentPlayer === 1) ? 2 : 1;
+    if (computer) {
+      if (currentPlayer === 1) {
+        currentPlayer = 2;
+        computerTurn();
+      } else {
+        currentPlayer = 1;
+      }
+    } else {
+      currentPlayer = (currentPlayer === 1) ? 2 : 1;
+    }
   }
 
   function checkRows(row) {
