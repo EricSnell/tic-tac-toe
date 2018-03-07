@@ -51,54 +51,64 @@
 
     // Block Player1 Row
     for (let i = 0; i < gameBoard.length; i++) {
-      if (gameBoard[i][0] === player1 && gameBoard[i][1] === player1) {
+      if ((gameBoard[i][0] === computer && gameBoard[i][1] === computer) ||
+        (gameBoard[i][0] === player1 && gameBoard[i][1] === player1)) {
         // place turn in gameBoard[i][2]
       }
-      else if (gameBoard[i][1] === player1 && gameBoard[i][2] === player1) {
+      else if ((gameBoard[i][1] === computer && gameBoard[i][2] === computer) ||
+        (gameBoard[i][1] === player1 && gameBoard[i][2] === player1)) {
         // place turn in gameBoard[i][0]
       }
     }
 
     // Block Player1 Column
-    if (gameBoard[0][0] === player1 && gameBoard[1][0] === player1) {
+    if ((gameBoard[0][0] === computer && gameBoard[1][0] === computer) ||
+      (gameBoard[0][0] === player1 && gameBoard[1][0] === player1)) {
       // place turn in gameBoard[2][0]
     }
-    else if (gameBoard[0][1] === player1 && gameBoard[1][1] === player1) {
+    else if ((gameBoard[0][1] === computer && gameBoard[1][1] === computer) ||
+      (gameBoard[0][1] === player1 && gameBoard[1][1] === player1)) {
       // place turn in gameBoard[2][1]
     }
-    else if (gameBoard[0][2] === player1 && gameBoard[1][2] === player1) {
+    else if ((gameBoard[0][2] === computer && gameBoard[1][2] === computer) ||
+      (gameBoard[0][2] === player1 && gameBoard[1][2] === player1)) {
       // place turn in gameBoard[2][2]
     }
-    else if (gameBoard[2][0] === player1 && gameBoard[1][0] === player1) {
+    else if ((gameBoard[2][0] === computer && gameBoard[1][0] === computer) ||
+      (gameBoard[2][0] === player1 && gameBoard[1][0] === player1)) {
       // place turn gameBoard[0][0]
     }
-    else if (gameBoard[2][1] === player1 && gameBoard[1][1] === player1) {
+    else if ((gameBoard[2][1] === computer && gameBoard[1][1] === computer) ||
+      (gameBoard[2][1] === player1 && gameBoard[1][1] === player1)) {
       // place turn gameBoard[0][1]
     }
-    else if (gameBoard[2][2] === player1 && gameBoard[1][2] === player1) {
+    else if ((gameBoard[2][2] === computer && gameBoard[1][2] === computer) ||
+      (gameBoard[2][1] === player1 && gameBoard[1][1] === player1)) {
       // place turn gameBoard[0][2]
     }
 
 
     // Block Player1 Diagonal (top left bottom right)
-    if (gameBoard[0][0] === player1 && gameBoard[1][1] === player1) {
+    if ((gameBoard[0][0] === computer && gameBoard[1][1] === computer) ||
+      (gameBoard[0][0] === player1 && gameBoard[1][1] === player1)) {
       // place turn gameBoard[2][2]
     }
-    else if (gameBoard[2][2] === player1 && gameBoard[1][1] === player1) {
+    else if ((gameBoard[2][2] === computer && gameBoard[1][1] === computer) ||
+      (gameBoard[2][2] === player1 && gameBoard[1][1] === player1)) {
       // place turn gameBoard[0][0]
     }
 
 
     // Block Player1 Diagonal (bottom left top right)
-    if (gameBoard[2][0] === player1 && gameBoard[1][1] === player1) {
+    if ((gameBoard[2][0] === computer && gameBoard[1][1] === computer) ||
+      (gameBoard[2][0] === player1 && gameBoard[1][1] === player1)) {
       // place turn gameBoard[0][2]
     }
-    else if (gameBoard[0][2] === player1 && gameBoard[1][1] === player1) {
+    else if ((gameBoard[0][2] === computer && gameBoard[1][1] === computer) ||
+      (gameBoard[0][2] === player1 && gameBoard[1][1] === player1)) {
       // place turn gameBoard[2][0]
     }
 
-
-    // Logic 
 
   }
 
