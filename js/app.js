@@ -53,12 +53,13 @@
     let tile;
     // Block Player1 Row
     for (let i = 0; i < gameBoard.length; i++) {
-      console.log(player1);
       if ((gameBoard[i][0] === computer && gameBoard[i][1] === computer) ||
         (gameBoard[i][0] === player1 && gameBoard[i][1] === player1)) {
         // place turn in gameBoard[i][2]
         tile = findTile(i, 2);
-        console.log(tile);
+        colorTile(tile);
+        updateBoard(i, 2);
+        findWinner(i, 2);
       }
       else if ((gameBoard[i][1] === computer && gameBoard[i][2] === computer) ||
         (gameBoard[i][1] === player1 && gameBoard[i][2] === player1)) {
@@ -114,7 +115,9 @@
       // place turn gameBoard[2][0]
     }
 
-
+    else {
+      // loop through board and place turn somewhere with null value
+    }
   }
 
   function findTile(rowNumber, columnNumber) {
