@@ -26,23 +26,57 @@
   $characterSelect.addEventListener('click', selectCharacter);
   $board.addEventListener('click', play);
 
-  /* FUNCTIONS FOR COMPUTER TURN 
-  -- Check Player 1's positions on board
-  -- If computer has 2 positions in either 4 directions, place turn in remaining space
-  -- If Player 1 has 2 positions in either 4 directions, place turn in remaining space
-  -- Otherwise place turn anywhere on board
-  -- If player one not on board - place turn anywhere on board
-  */
-
-
-
-
-
-
 
   function computerTurn() {
-    console.log(gameBoard);
+    console.log('computer turn', gameBoard);
+
+    /*
+    -- Check Player 1's positions on board
+    -- If computer has 2 positions in either 4 directions, place turn in remaining space
+    -- If Player 1 has 2 positions in either 4 directions, place turn in remaining space
+    -- Otherwise place turn anywhere on board
+    -- If player one not on board - place turn anywhere on board
+
+          [ 1 , 1 , - ],
+          [ - , -, - ],
+          [ - , - , - ]
+
+    */
+
+    // Block Player1 Row
+    for (let i = 0; i < gameBoard.length; i++) {
+      if (gameBoard[i][0] === player1 && gameBoard[i][1] === player1) {
+        // place turn in gameBoard[i][2]
+      }
+      else if (gameBoard[i][1] === player1 && gameBoard[i][2] === player1) {
+        // place turn in gameBoard[i][0]
+      }
+    }
+
+    // Block Player1 Column
+    if (gameBoard[0][0] === player1 && gameBoard[1][0] === player1) {
+      // place turn in gameBoard[2][0]
+    }
+    else if (gameBoard[0][1] === player1 && gameBoard[1][1] === player1) {
+      // place turn in gameBoard[2][1]
+    }
+    else if (gameBoard[0][2] === player1 && gameBoard[1][2] === player1) {
+      // place turn in gameBoard[2][2]
+    }
+    else if (gameBoard[2][0] === player1 && gameBoard[1][0] === player1) {
+      // place turn gameBoard[0][0]
+    }
+    else if (gameBoard[2][1] === player1 && gameBoard[1][1] === player1) {
+      // place turn gameBoard[0][1]
+    }
+    else if (gameBoard[2][2] === player1 && gameBoard[1][2] === player1) {
+      // place turn gameBoard[0][2]
+    }
+
+
+
   }
+
 
   function selectPlayers(e) {
     e.stopPropagation();
