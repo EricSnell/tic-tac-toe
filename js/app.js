@@ -10,7 +10,7 @@
   }
 
   let gameBoard = game.board.map(arr => arr.slice())
-  let currentPlayer = 1;
+  let currentPlayer = 'x';
   let player1 = null;
   let player2 = null;
   let computer = false;
@@ -166,7 +166,7 @@
   }
 
   function colorTile(tile) {
-    if (currentPlayer === 1) {
+    if (currentPlayer === player1) {
       tile.classList.add('playerOne');
       tile.innerHTML = player1;
     }
@@ -182,14 +182,14 @@
 
   function changePlayer() {
     if (computer) {
-      if (currentPlayer === 1) {
-        currentPlayer = 2;
+      if (currentPlayer === player1) {
+        currentPlayer = computer;
         computerTurn();
       } else {
-        currentPlayer = 1;
+        currentPlayer = player1;
       }
     } else {
-      currentPlayer = (currentPlayer === 1) ? 2 : 1;
+      currentPlayer = (currentPlayer === player1) ? player2 : player1;
     }
   }
 
