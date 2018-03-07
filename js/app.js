@@ -43,6 +43,12 @@
 
     */
 
+
+    /* 
+      For all if statements below -- add OR statement to check if === computer.
+      This will allow you to either block Player1 from winning - or placing winning move
+    */
+
     // Block Player1 Row
     for (let i = 0; i < gameBoard.length; i++) {
       if (gameBoard[i][0] === player1 && gameBoard[i][1] === player1) {
@@ -92,6 +98,7 @@
     }
 
 
+    // Logic 
 
   }
 
