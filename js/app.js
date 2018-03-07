@@ -74,6 +74,24 @@
     }
 
 
+    // Block Player1 Diagonal (top left bottom right)
+    if (gameBoard[0][0] === player1 && gameBoard[1][1] === player1) {
+      // place turn gameBoard[2][2]
+    }
+    else if (gameBoard[2][2] === player1 && gameBoard[1][1] === player1) {
+      // place turn gameBoard[0][0]
+    }
+
+
+    // Block Player1 Diagonal (bottom left top right)
+    if (gameBoard[2][0] === player1 && gameBoard[1][1] === player1) {
+      // place turn gameBoard[0][2]
+    }
+    else if (gameBoard[0][2] === player1 && gameBoard[1][1] === player1) {
+      // place turn gameBoard[2][0]
+    }
+
+
 
   }
 
