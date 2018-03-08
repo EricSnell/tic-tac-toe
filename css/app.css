@@ -64,45 +64,30 @@ h1 {
 #new-game {
   width: 90%;
   height: 80px;
-  border: none;
-  margin-top: 20px;
-  border-bottom: 5px solid #2E7D32;
-  background-color: #43A047;
-  cursor: pointer;
-  color: #fff;
-  font-size: 30px;
-  transition: background-color 0.3s; }
-
-#new-game:hover {
-  background-color: #388E3C; }
-
-#players-select {
-  width: 400px;
-  background: green;
-  width: 10rem; }
-
-#character-select {
-  background: orange;
-  border: 1px solid white; }
+  margin-top: 20px; }
 
 .options {
-  width: 400px;
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%); }
+  margin: 100px auto 0; }
   .options__choice {
-    border: 1px solid white;
+    margin-bottom: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 60px;
-    cursor: pointer; }
-    .options__choice:hover {
-      background: red; }
+    height: 60px; }
 
 input[type="radio"] {
   display: none; }
 
 .hidden {
   display: none; }
+
+.btn {
+  color: white;
+  background: none;
+  cursor: pointer;
+  transition: all .3s;
+  font-size: 40px;
+  border: 1px solid white; }
+  .btn:hover {
+    background: white;
+    color: #3F51B5; }
