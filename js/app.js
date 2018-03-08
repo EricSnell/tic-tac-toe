@@ -26,6 +26,13 @@
   $characterSelect.addEventListener('click', selectCharacter);
   $board.addEventListener('click', play);
 
+  init();
+
+  function init() {
+    $board.style.display = 'none';
+    $characterSelect.style.display = 'none';
+  }
+
 
   function computerTurn() {
     setTimeout(tryToWin, 700);
@@ -116,6 +123,8 @@
     const { target } = e;
     if (target.tagName === 'LABEL') {
       computer = target.htmlFor === 'one-player';
+      $playerSelect.style.display = 'none';
+      $characterSelect.style.display = 'block';
     }
   }
 
@@ -128,10 +137,13 @@
       player1 = char1;
       if (computer) computer = char2;
       else player2 = char2;
+      $characterSelect.style.display = 'none';
+      $board.style.display = 'flex';
     }
   }
 
   function play(event) {
+    event.stopPropagation();
     if (event.target.tagName === 'DIV') {
       const $tile = event.target;
       const { row } = $tile.dataset;

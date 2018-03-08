@@ -90,6 +90,47 @@ h1 {
   background-color: #388E3C;
 }
 
+#players-select {
+  width: 400px;
+  background: green;
+  width: 10rem;
+}
+
+#character-select {
+  background: orange;
+  border: 1px solid white;
+}
+
+.options {
+  width: 400px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &__header {
+
+  }
+
+  &__choice {
+    border: 1px solid white;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    cursor: pointer;
+    
+    &:hover {
+      background: red;
+    }
+  }
+
+}
+
+input[type="radio"] {
+  display: none;
+}
+
 .hidden {
   display: none;
 }

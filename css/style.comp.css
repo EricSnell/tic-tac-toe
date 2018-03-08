@@ -76,5 +76,11 @@ h1 {
 #new-game:hover {
   background-color: #388E3C; }
 
+#player-select {
+  border: 1px solid white; }
+
+#character-select {
+  border: 1px solid white; }
+
 .hidden {
   display: none; }
