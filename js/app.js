@@ -34,7 +34,13 @@
   }
 
 
+  function toggleInteractiveBoard() {
+    if (currentPlayer === computer) $board.removeEventListener('click', play);
+    else $board.addEventListener('click', play);
+  }
+
   function computerTurn() {
+    toggleInteractiveBoard();
     setTimeout(tryToWin, 700);
 
     function tryToWin() {
@@ -101,17 +107,16 @@
         randomCol = Math.floor(Math.random() * gameBoard.length);
         tile = findTile(randomRow, randomCol);
       }
-      colorTile(tile);
-      updateBoard(randomRow, randomCol);
-      findWinner(randomRow, randomCol);
+      computerPlay(randomRow, randomCol, tile);
     }
   }
 
-  function computerPlay(row, column) {
-    const tile = findTile(row, column);
+  function computerPlay(row, column, el = false) {
+    const tile = el || findTile(row, column);
     colorTile(tile);
     updateBoard(row, column);
     findWinner(row, column);
+    toggleInteractiveBoard();
   }
 
   function findTile(rowNumber, columnNumber) {
