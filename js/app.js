@@ -32,7 +32,7 @@
 
     function tryToWin() {
       // Try Row
-      for (let i = 0; i < gameBoard.length; i++) {
+      for (let i = 0; i < gameBoard.length; i += 1) {
         if (gameBoard[i][0] === computer && gameBoard[i][1] === computer && gameBoard[i][2] === null) { computerPlay(i, 2); return; }
         else if (gameBoard[i][2] === computer && gameBoard[i][0] === computer && gameBoard[i][1] === null) { computerPlay(i, 1); return; }
         else if (gameBoard[i][1] === computer && gameBoard[i][2] === computer && gameBoard[i][0] === null) { computerPlay(i, 0); return; }
@@ -59,7 +59,7 @@
 
     // Block Player1 Row
     function blockPlayer() {
-      for (let i = 0; i < gameBoard.length; i++) {
+      for (let i = 0; i < gameBoard.length; i += 1) {
         if (gameBoard[i][0] === player1 && gameBoard[i][1] === player1 && gameBoard[i][2] === null) { computerPlay(i, 2); return; }
         else if (gameBoard[i][2] === player1 && gameBoard[i][0] === player1 && gameBoard[i][1] === null) { computerPlay(i, 1); return; }
         else if (gameBoard[i][1] === player1 && gameBoard[i][2] === player1 && gameBoard[i][0] === null) { computerPlay(i, 0); return; }
@@ -178,35 +178,35 @@
   }
 
   function checkRows(row) {
-    for (let i = 0; i < gameBoard[row].length; i++) {
+    for (let i = 0; i < gameBoard[row].length; i += 1) {
       if (gameBoard[row][i] !== currentPlayer) return;
     }
     return true;
   }
 
   function checkColumns(column) {
-    for (let i = 0; i < gameBoard.length; i++) {
+    for (let i = 0; i < gameBoard.length; i += 1) {
       if (gameBoard[i][column] !== currentPlayer) return;
     }
     return true;
   }
 
   function checkDiagonalTop() {
-    for (let i = 0; i < gameBoard.length; i++) {
+    for (let i = 0; i < gameBoard.length; i += 1) {
       if (gameBoard[i][i] !== currentPlayer) return;
     }
     return true;
   }
 
   function checkDiagonalBottom() {
-    for (let i = 0; i < gameBoard.length; i++) {
+    for (let i = 0; i < gameBoard.length; i += 1) {
       if (gameBoard[i][(gameBoard.length - 1) - i] !== currentPlayer) return;
     }
     return true;
   }
 
   function isDraw() {
-    for (let i = 0; i < gameBoard.length; i++) {
+    for (let i = 0; i < gameBoard.length; i += 1) {
       if (gameBoard[i].indexOf(null) !== -1) return;
     }
     return true;
