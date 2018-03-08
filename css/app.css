@@ -37,23 +37,23 @@ h1 {
   background-color: #eee;
   opacity: 0.3; }
 
-.playerOne {
+.playerX {
   background-color: #E91E63;
   border-color: #E91E63; }
 
-.playerTwo {
+.playerO {
   background-color: #FDD835;
   border-color: #FDD835; }
 
-.board-tile.playerOne:hover,
-.board-tile.playerTwo:hover {
+.board-tile.playerX:hover,
+.board-tile.playerO:hover {
   box-shadow: none;
   opacity: 1; }
 
-.board-tile.playerOne:hover {
+.board-tile.playerX:hover {
   background-color: #E91E63; }
 
-.board-tile.playerTwo:hover {
+.board-tile.playerO:hover {
   background-color: #FDD835; }
 
 #results {
