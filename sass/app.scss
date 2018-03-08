@@ -1,6 +1,11 @@
 :root {
   --background: #3F51B5;
   --font-color: #ffffff;
+
+  --player-x: red;
+  --player-y: yellow;
+
+  --tile-margin: 1rem;
 }
 
 
@@ -21,7 +26,7 @@ html {
 body {
   height: 100%;
   background-color: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Bungee, Helvetica, sans-serif;
   text-align: center;
   color: var(--font-color);
   text-transform: uppercase;
@@ -37,12 +42,11 @@ main {
 
 h1 {
   margin: 3rem 0;
-  font-size: 5rem;
+  font-size: 8rem;
   letter-spacing: 5px;
 }
 
 #board {
-  border: 1px solid white;
   width: 50rem;
   height: 50rem;
   margin: 0 auto 5rem;
@@ -54,13 +58,18 @@ h1 {
 .board-row {
   flex: 1;
   display: flex;
+  margin-bottom: var(--tile-margin);
 }
 
 .board-tile {
   flex: 1;
-  border: 2px solid #aaa;
-  border-radius: 50%;
+  border: 3px solid var(--font-color);
+  border-radius: 20%;
   transition: all 0.2s ease-out;
+}
+
+.board-tile:not(:last-child) {
+  margin-right: var(--tile-margin);
 }
 
 .board-tile:hover {
@@ -70,13 +79,13 @@ h1 {
 }
 
 .playerX {
-  background-color: #E91E63;
-  border-color: #E91E63;
+  background-color: var(--player-x);
+  border-color: var(--player-x);
 }
 
 .playerO {
-  background-color: #FDD835;
-  border-color: #FDD835;
+  background-color: var(--player-y);
+  border-color: var(--player-y);
 }
 
 .board-tile.playerX:hover,
@@ -86,11 +95,11 @@ h1 {
 }
 
 .board-tile.playerX:hover {
-  background-color: #E91E63;
+  background-color: var(--player-x);
 }
 
 .board-tile.playerO:hover {
-  background-color: #FDD835;
+  background-color: var(--player-y);
 }
 
 #results {
@@ -128,15 +137,6 @@ h1 {
     align-items: center;
     height: 6rem;
   }
-
-}
-
-input[type="radio"] {
-  display: none;
-}
-
-.hidden {
-  display: none;
 }
 
 .btn {
@@ -145,10 +145,17 @@ input[type="radio"] {
   cursor: pointer;
   transition: all .3s;
   font-size: 4rem;
-  border: 1px solid var(--font-color);
 
   &:hover {
     background: var(--font-color);
     color: var(--background);
   }
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.hidden {
+  display: none;
 }
