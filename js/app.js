@@ -66,7 +66,6 @@
   }
 
   function selectCharacter(e) {
-    console.log(currentPlayer);
     e.stopPropagation();
     const { target } = e;
     if (target.tagName === 'LABEL') {
@@ -78,7 +77,6 @@
       $characterSelect.style.display = 'none';
       $board.style.display = 'flex';
       currentPlayer = player1;
-      console.log(currentPlayer);
     }
   }
 
@@ -175,11 +173,8 @@
   function newGame() {
     const $tiles = $board.querySelectorAll('.playerX, .playerO');
     gameBoard = game.board.map(arr => arr.slice());
-
     $tiles.forEach(elm => elm.classList.remove('playerX', 'playerO'));
-
     $results.classList.add('hidden');
-
     $newGameButton.removeEventListener('click', newGame);
     $board.addEventListener('click', play);
   }

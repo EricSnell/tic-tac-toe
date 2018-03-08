@@ -1,37 +1,63 @@
-body {
+:root {
+  --background: #3F51B5;
+  --font-color: #ffffff;
+}
+
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  height: 100%;
+}
+
+*, 
+*:before,
+*:after {
+  box-sizing: inherit;
+  padding: 0;
   margin: 0;
-  background-color: #3F51B5;
+}
+
+body {
+  height: 100%;
+  background-color: var(--background);
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
-  color: white;
+  color: var(--font-color);
   text-transform: uppercase;
 }
 
 main {
-  min-width: 350px;
-  max-width: 600px;
+  height: 80rem;
+  min-width: 35rem;
+  max-width: 60rem;
   margin: 0 auto;
+  padding: 5rem 0;
 }
 
 h1 {
-  margin: 30px 0;
-  font-size: 50px;
+  margin: 3rem 0;
+  font-size: 5rem;
   letter-spacing: 5px;
 }
 
 #board {
-  width: 400px;
-  height: 400px;
-  margin: 0 auto;
+  border: 1px solid white;
+  width: 50rem;
+  height: 50rem;
+  margin: 0 auto 5rem;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  flex-direction: column;
   position: relative;
 }
 
+.board-row {
+  flex: 1;
+  display: flex;
+}
+
 .board-tile {
-  flex: 0 0 33.3%;
-  box-sizing: border-box;
+  flex: 1;
   border: 2px solid #aaa;
   border-radius: 50%;
   transition: all 0.2s ease-out;
@@ -68,15 +94,15 @@ h1 {
 }
 
 #results {
-  margin: 25px auto;
-  width: 400px;
-  font-size: 24px;
+  margin: 2.5rem auto;
+  width: 40rem;
+  font-size: 2.5rem;
 }
 
 #new-game {
   width: 90%;
-  height: 80px;
-  margin-top: 20px;
+  height: 8rem;
+  margin-top: 2rem;
 }
 
 #players-select {
@@ -88,18 +114,19 @@ h1 {
 }
 
 .options {
-  margin: 100px auto 0;
+  margin: 10rem auto 0;
 
   &__header {
-  
+    font-size: 3rem;
+    margin-bottom: 2rem;
   }
 
   &__choice {
-    margin-bottom: 15px;
+    margin-bottom: 1.5rem;
     display: flex; 
     justify-content: center;
     align-items: center;
-    height: 60px;
+    height: 6rem;
   }
 
 }
@@ -113,15 +140,15 @@ input[type="radio"] {
 }
 
 .btn {
-  color: white;
+  color: var(--font-color);
   background: none;
   cursor: pointer;
   transition: all .3s;
-  font-size: 40px;
-  border: 1px solid white;
+  font-size: 4rem;
+  border: 1px solid var(--font-color);
 
   &:hover {
-    background: white;
-    color: #3F51B5;
+    background: var(--font-color);
+    color: var(--background);
   }
 }

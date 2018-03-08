@@ -26,7 +26,7 @@
     </section>
 
     <section id="character-select" class="options">
-      <h2 class="options__header">Player 1: Select Character</h2>
+      <h2 class="options__header">Select Character</h2>
       <label for="x" class="options__choice btn">X</label>
       <input type="radio" id="x" name="character">
       <label for="o" class="options__choice btn">O</label>
@@ -34,15 +34,24 @@
     </section>
 
     <section id="board">
-      <div class="board-tile" data-row="0" data-column="0"></div>
-      <div class="board-tile" data-row="0" data-column="1"></div>
-      <div class="board-tile" data-row="0" data-column="2"></div>
-      <div class="board-tile" data-row="1" data-column="0"></div>
-      <div class="board-tile" data-row="1" data-column="1"></div>
-      <div class="board-tile" data-row="1" data-column="2"></div>
-      <div class="board-tile" data-row="2" data-column="0"></div>
-      <div class="board-tile" data-row="2" data-column="1"></div>
-      <div class="board-tile" data-row="2" data-column="2"></div>
+      <div class="board-row">
+        <div class="board-tile" data-row="0" data-column="0">x</div>
+        <div class="board-tile" data-row="0" data-column="1"></div>
+        <div class="board-tile" data-row="0" data-column="2"></div>
+      </div>
+
+      <div class="board-row">
+        <div class="board-tile" data-row="1" data-column="0"></div>
+        <div class="board-tile" data-row="1" data-column="1"></div>
+        <div class="board-tile" data-row="1" data-column="2"></div>
+      </div>
+
+      <div class="board-row">
+        <div class="board-tile" data-row="2" data-column="0"></div>
+        <div class="board-tile" data-row="2" data-column="1"></div>
+        <div class="board-tile" data-row="2" data-column="2"></div>
+      </div>
+
     </section>
 
     <section id="results" class="hidden">
