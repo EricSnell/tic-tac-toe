@@ -28,8 +28,6 @@
 
 
   function computerTurn() {
-    let tile;
-
     setTimeout(() => {
       tryToWin();
     }, 700);
@@ -38,9 +36,9 @@
     // Block Player1 Row
     function blockPlayer() {
       for (let i = 0; i < gameBoard.length; i++) {
-        if (gameBoard[i][0] === player1 && gameBoard[i][1] === player1 && gameBoard[i][2] === null) { computerPlay(i, 2); }
-        else if (gameBoard[i][2] === player1 && gameBoard[i][0] === player1 && gameBoard[i][1] === null) { computerPlay(i, 1); }
-        else if (gameBoard[i][1] === player1 && gameBoard[i][2] === player1 && gameBoard[i][0] === null) { computerPlay(i, 0); }
+        if (gameBoard[i][0] === player1 && gameBoard[i][1] === player1 && gameBoard[i][2] === null) { computerPlay(i, 2); return; }
+        else if (gameBoard[i][2] === player1 && gameBoard[i][0] === player1 && gameBoard[i][1] === null) { computerPlay(i, 1); return; }
+        else if (gameBoard[i][1] === player1 && gameBoard[i][2] === player1 && gameBoard[i][0] === null) { computerPlay(i, 0); return; }
       }
       // Block Column
       if (gameBoard[0][0] === player1 && gameBoard[1][0] === player1 && gameBoard[2][0] === null) { computerPlay(2, 0); }
@@ -62,9 +60,9 @@
     function tryToWin() {
       // Try Row
       for (let i = 0; i < gameBoard.length; i++) {
-        if (gameBoard[i][0] === computer && gameBoard[i][1] === computer && gameBoard[i][2] === null) { computerPlay(i, 2); }
-        else if (gameBoard[i][2] === computer && gameBoard[i][0] === computer && gameBoard[i][1] === null) { computerPlay(i, 1); }
-        else if (gameBoard[i][1] === computer && gameBoard[i][2] === computer && gameBoard[i][0] === null) { computerPlay(i, 0); }
+        if (gameBoard[i][0] === computer && gameBoard[i][1] === computer && gameBoard[i][2] === null) { computerPlay(i, 2); return; }
+        else if (gameBoard[i][2] === computer && gameBoard[i][0] === computer && gameBoard[i][1] === null) { computerPlay(i, 1); return; }
+        else if (gameBoard[i][1] === computer && gameBoard[i][2] === computer && gameBoard[i][0] === null) { computerPlay(i, 0); return; }
       }
       // Try Column
       if (gameBoard[0][0] === computer && gameBoard[1][0] === computer && gameBoard[2][0] === null) { computerPlay(2, 0); }
@@ -81,74 +79,10 @@
       else { blockPlayer(); }
     }
 
-
-    // // Block Player1 Column
-    // function blockPlayerColumn() {
-    //   if ((gameBoard[0][0] === computer && gameBoard[1][0] === computer && gameBoard[2][0] === null) ||
-    //     (gameBoard[0][0] === player1 && gameBoard[1][0] === player1 && gameBoard[2][0] === null)) {
-    //     computerPlay(2, 0);
-    //     return true;
-    //   }
-    //   else if ((gameBoard[0][1] === computer && gameBoard[1][1] === computer && gameBoard[2][1] === null) ||
-    //     (gameBoard[0][1] === player1 && gameBoard[1][1] === player1 && gameBoard[2][1] === null)) {
-    //     computerPlay(2, 1);
-    //     return true;
-    //   }
-    //   else if ((gameBoard[0][2] === computer && gameBoard[1][2] === computer && gameBoard[2][2] === null) ||
-    //     (gameBoard[0][2] === player1 && gameBoard[1][2] === player1 && gameBoard[2][2] === null)) {
-    //     computerPlay(2, 2);
-    //     return true;
-    //   }
-    //   else if ((gameBoard[2][0] === computer && gameBoard[1][0] === computer && gameBoard[0][0] === null) ||
-    //     (gameBoard[2][0] === player1 && gameBoard[1][0] === player1 && gameBoard[0][0] === null)) {
-    //     computerPlay(0, 0);
-    //     return true;
-    //   }
-    //   else if ((gameBoard[2][1] === computer && gameBoard[1][1] === computer && gameBoard[0][1] === null) ||
-    //     (gameBoard[2][1] === player1 && gameBoard[1][1] === player1 && gameBoard[0][1] === null)) {
-    //     computerPlay(0, 1);
-    //     return true;
-    //   }
-    //   else if ((gameBoard[2][2] === computer && gameBoard[1][2] === computer && gameBoard[0][2] === null) ||
-    //     (gameBoard[2][1] === player1 && gameBoard[1][1] === player1 && gameBoard[0][2] === null)) {
-    //     computerPlay(0, 2);
-    //     return true;
-    //   }
-    //   return false;
-    // }
-
-
-    // function blockPlayerDiag() {
-    //   // Block Player1 Diagonal (top left bottom right)
-    //   if ((gameBoard[0][0] === computer && gameBoard[1][1] === computer && gameBoard[2][2] === null) ||
-    //     (gameBoard[0][0] === player1 && gameBoard[1][1] === player1 && gameBoard[2][2] === null)) {
-    //     computerPlay(2, 2);
-    //     return true;
-    //   }
-    //   else if ((gameBoard[2][2] === computer && gameBoard[1][1] === computer && gameBoard[0][0] === null) ||
-    //     (gameBoard[2][2] === player1 && gameBoard[1][1] === player1 && gameBoard[0][0] === null)) {
-    //     computerPlay(0, 0);
-    //     return true;
-    //   }
-    //   // Block Player1 Diagonal (bottom left top right)
-    //   else if ((gameBoard[2][0] === computer && gameBoard[1][1] === computer && gameBoard[0][2] === null) ||
-    //     (gameBoard[2][0] === player1 && gameBoard[1][1] === player1 && gameBoard[0][2] === null)) {
-    //     computerPlay(0, 2);
-    //     return true;
-    //   }
-    //   else if ((gameBoard[0][2] === computer && gameBoard[1][1] === computer && gameBoard[2][0] === null) ||
-    //     (gameBoard[0][2] === player1 && gameBoard[1][1] === player1 && gameBoard[2][0] === null)) {
-    //     computerPlay(2, 0);
-    //     return true;
-    //   }
-    //   return false;
-    // }
-
-
     function random() {
       let randomRow = Math.floor(Math.random() * gameBoard.length);
       let randomCol = Math.floor(Math.random() * gameBoard.length);
-      tile = findTile(randomRow, randomCol);
+      let tile = findTile(randomRow, randomCol);
       while (tile.classList.contains('playerOne') || tile.classList.contains('playerTwo')) {
         randomRow = Math.floor(Math.random() * gameBoard.length);
         randomCol = Math.floor(Math.random() * gameBoard.length);
