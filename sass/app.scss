@@ -2,8 +2,8 @@
   --background: #3F51B5;
   --font-color: #ffffff;
 
-  --player-x: red;
-  --player-y: yellow;
+  --player-x: #3F51B5;
+  --player-y: #3F51B5;
 
   --tile-margin: 1rem;
 }
@@ -18,6 +18,7 @@ html {
 *, 
 *:before,
 *:after {
+  font-family: inherit;
   box-sizing: inherit;
   padding: 0;
   margin: 0;
@@ -53,6 +54,7 @@ h1 {
   display: flex;
   flex-direction: column;
   position: relative;
+  z-index: 1;
 }
 
 .board-row {
@@ -63,6 +65,11 @@ h1 {
 
 .board-tile {
   flex: 1;
+  color: -var(--font-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10rem;
   border: 3px solid var(--font-color);
   border-radius: 20%;
   transition: all 0.2s ease-out;
@@ -79,13 +86,15 @@ h1 {
 }
 
 .playerX {
-  background-color: var(--player-x);
-  border-color: var(--player-x);
+  background-color: var(--font-color);
+  border-color: var(--font-color);
+  color: var(--player-x);
 }
 
 .playerO {
-  background-color: var(--player-y);
-  border-color: var(--player-y);
+  background-color: var(--font-color);
+  border-color: var(--font-color);
+  color: var(--player-y);
 }
 
 .board-tile.playerX:hover,
@@ -95,23 +104,38 @@ h1 {
 }
 
 .board-tile.playerX:hover {
-  background-color: var(--player-x);
+  background-color: var(--font-color);
 }
 
 .board-tile.playerO:hover {
-  background-color: var(--player-y);
+  background-color: var(--font-color);
 }
 
 #results {
   margin: 2.5rem auto;
   width: 40rem;
   font-size: 2.5rem;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+}
+
+#results-text {
+  font-size: 4rem;
 }
 
 #new-game {
+  background: var(--background);
   width: 90%;
   height: 8rem;
   margin-top: 2rem;
+}
+
+#new-game:hover {
+  background: var(--font-color);
+  color: var(--background);
 }
 
 #players-select {
@@ -123,10 +147,10 @@ h1 {
 }
 
 .options {
-  margin: 10rem auto 0;
+  margin: 5rem auto 0;
 
   &__header {
-    font-size: 3rem;
+    font-size: 4rem;
     margin-bottom: 2rem;
   }
 
@@ -158,4 +182,17 @@ input[type="radio"] {
 
 .hidden {
   display: none;
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #333;
+  display: none;
+  opacity: 0;
+  transition: opacity .3s;
+  z-index: 10;
 }

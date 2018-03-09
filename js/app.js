@@ -21,6 +21,7 @@
   const $newGameButton = $results.querySelector('#new-game');
   const $playerSelect = document.getElementById('players-select');
   const $characterSelect = document.getElementById('character-select');
+  const $overlay = document.getElementById('overlay');
 
   $playerSelect.addEventListener('click', selectPlayers);
   $characterSelect.addEventListener('click', selectCharacter);
@@ -107,8 +108,13 @@
 
   function colorTile(tile) {
     console.log(currentPlayer);
-    if (currentPlayer === 'x') tile.classList.add('playerX');
-    else tile.classList.add('playerO');
+    if (currentPlayer === 'x') {
+      tile.classList.add('playerX');
+      tile.innerHTML = 'X';
+    } else {
+      tile.classList.add('playerO');
+      tile.innerHTML = 'O';
+    }
   }
 
   function updateBoard(row, column) {
@@ -166,6 +172,8 @@
   function showResults(resultText) {
     $board.removeEventListener('click', play);
     $newGameButton.addEventListener('click', newGame);
+    $overlay.style.display = 'block';
+    $overlay.style.opacity = '0.8';
     $results.classList.remove('hidden');
     $resultsText.innerHTML = resultText;
   }
@@ -175,6 +183,8 @@
     gameBoard = game.board.map(arr => arr.slice());
     $tiles.forEach(elm => elm.classList.remove('playerX', 'playerO'));
     $results.classList.add('hidden');
+    $overlay.style.opacity = '0';
+    $overlay.style.display = 'none';
     $newGameButton.removeEventListener('click', newGame);
     $board.addEventListener('click', play);
   }
