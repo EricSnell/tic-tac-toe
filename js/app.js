@@ -253,6 +253,8 @@
     else if (gameBoard[0][2] === player1 && gameBoard[1][1] === player1 && gameBoard[2][0] === null) { computerPlay(2, 0); }
     else if (gameBoard[0][0] === player1 && gameBoard[2][2] === player1 && gameBoard[1][1] === null) { computerPlay(1, 1); }
     else if (gameBoard[2][0] === player1 && gameBoard[0][2] === player1 && gameBoard[1][1] === null) { computerPlay(1, 1); }
+    // Attempt center tile
+    else if (gameBoard[1][1] === null) { computerPlay(1, 1); }
     else { random(); }
   }
 
