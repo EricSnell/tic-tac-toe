@@ -139,27 +139,32 @@ h1 {
 }
 
 #players-select {
-
+  
 }
 
 #character-select {
-
+  
 }
 
 .options {
   margin: 5rem auto 0;
-
+  position: relative;
+  z-index: 99;
+  
   &__header {
     font-size: 4rem;
     margin-bottom: 2rem;
   }
-
+  
   &__choice {
+    background: var(--background);
+    width: 50%;
+    margin: 0 auto;
     margin-bottom: 1.5rem;
     display: flex; 
     justify-content: center;
     align-items: center;
-    height: 6rem;
+    height: 8rem;
   }
 }
 
