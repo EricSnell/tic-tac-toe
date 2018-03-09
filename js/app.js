@@ -181,7 +181,10 @@
   function newGame() {
     const $tiles = $board.querySelectorAll('.playerX, .playerO');
     gameBoard = game.board.map(arr => arr.slice());
-    $tiles.forEach(elm => elm.classList.remove('playerX', 'playerO'));
+    $tiles.forEach(elm => {
+      elm.classList.remove('playerX', 'playerO');
+      elm.innerHTML = '';
+    });
     $results.classList.add('hidden');
     $overlay.style.opacity = '0';
     $overlay.style.display = 'none';
