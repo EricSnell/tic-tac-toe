@@ -1,8 +1,7 @@
 :root {
   --background: #3F51B5;
   --font-color: #ffffff;
-  --player-x: #3F51B5;
-  --player-y: #3F51B5;
+  --tile-font-color: #3F51B5;
   --tile-margin: 1rem; }
 
 html {
@@ -22,7 +21,6 @@ body {
   height: 100%;
   background-color: var(--background);
   font-family: Bungee, Helvetica, sans-serif;
-  text-align: center;
   color: var(--font-color);
   text-transform: uppercase; }
 
@@ -36,7 +34,7 @@ main {
 h1 {
   margin: 3rem 0;
   font-size: 8rem;
-  letter-spacing: 5px; }
+  text-align: center; }
 
 #board {
   width: 50rem;
@@ -54,11 +52,11 @@ h1 {
 
 .board-tile {
   flex: 1;
+  font-size: 10rem;
   color: -var(--font-color);
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 10rem;
   border: 3px solid var(--font-color);
   border-radius: 20%;
   transition: all 0.2s ease-out; }
@@ -71,30 +69,21 @@ h1 {
   background-color: #eee;
   opacity: 0.3; }
 
-.playerX {
-  background-color: var(--font-color);
-  border-color: var(--font-color);
-  color: var(--player-x); }
-
+.playerX,
 .playerO {
   background-color: var(--font-color);
   border-color: var(--font-color);
-  color: var(--player-y); }
+  color: var(--tile-font-color); }
 
 .board-tile.playerX:hover,
 .board-tile.playerO:hover {
-  box-shadow: none;
+  background-color: var(--font-color);
   opacity: 1; }
 
-.board-tile.playerX:hover {
-  background-color: var(--font-color); }
-
-.board-tile.playerO:hover {
-  background-color: var(--font-color); }
-
 #results {
-  margin: 2.5rem auto;
   width: 40rem;
+  margin: 2.5rem auto;
+  text-align: center;
   font-size: 2.5rem;
   position: absolute;
   top: 30%;
@@ -121,6 +110,7 @@ h1 {
   z-index: 99; }
   .options__header {
     font-size: 4rem;
+    text-align: center;
     margin-bottom: 2rem; }
   .options__choice {
     background: var(--background);
