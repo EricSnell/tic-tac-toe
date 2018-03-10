@@ -34,7 +34,9 @@ main {
 h1 {
   margin: 2rem 0;
   font-size: 8rem;
-  text-align: center; }
+  text-align: center;
+  opacity: 0;
+  animation: fade-in .8s ease forwards; }
 
 #board {
   width: 50rem;
@@ -107,7 +109,9 @@ h1 {
 .options {
   margin: 5rem auto 0;
   position: relative;
-  z-index: 99; }
+  z-index: 99;
+  opacity: 0;
+  animation: fade-up .6s .3s ease forwards; }
   .options__header {
     font-size: 4rem;
     text-align: center;
@@ -149,3 +153,27 @@ input[type="radio"] {
   opacity: 0;
   transition: opacity .3s;
   z-index: 10; }
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+@keyframes fade-down {
+  0% {
+    opacity: 1;
+    transform: translateY(0); }
+  100% {
+    opacity: 0;
+    transform: translateY(3rem); } }
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: scale(1.5); }
+  100% {
+    opacity: 1;
+    transform: scale(1); } }
