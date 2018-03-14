@@ -171,14 +171,6 @@ h1 {
   }
 }
 
-input[type="radio"] {
-  display: none;
-}
-
-.hidden {
-  display: none;
-}
-
 #overlay {
   position: fixed;
   top: 0;
@@ -192,6 +184,20 @@ input[type="radio"] {
   z-index: 10;
 }
 
+input[type="radio"] {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+
+
+/*=========================
+      KEYFRAMES
+==========================*/
+
 @keyframes fade-up {
   0% {
     opacity: 0;
@@ -201,23 +207,6 @@ input[type="radio"] {
   100% {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes fade-down {
-  0% {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  99% {
-    opacity: 0;
-    transform: translateY(3rem);
-  }
-
-  100% {
-    display: none;
   }
 }
 
