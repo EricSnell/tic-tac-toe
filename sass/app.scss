@@ -45,7 +45,7 @@ h1 {
   font-size: 8rem;
   text-align: center;
   opacity: 0;
-  animation: zoom-in .7s ease forwards;
+  animation: zoom-down .7s ease forwards;
 }
 
 #board {
@@ -114,6 +114,9 @@ h1 {
 
 #results-text {
   font-size: 4rem;
+  display: block;
+  opacity: 0;
+  animation: zoom-in .2s .3s ease-in forwards;
 }
 
 #new-game {
@@ -121,6 +124,8 @@ h1 {
   width: 90%;
   height: 8rem;
   margin-top: 2rem;
+  opacity: 0;
+  animation: zoom-in .2s .9s ease-in forwards;
 }
 
 #new-game:hover {
@@ -216,10 +221,22 @@ input[type="radio"] {
   }
 }
 
-@keyframes zoom-in {
+@keyframes zoom-down {
   0% {
     opacity: 0;
     transform: scale(1.5);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes zoom-in {
+  0% {
+    opacity: 0;
+    transform: scale(.3);
   }
 
   100% {

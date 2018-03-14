@@ -37,7 +37,7 @@ h1 {
   font-size: 8rem;
   text-align: center;
   opacity: 0;
-  animation: zoom-in .7s ease forwards; }
+  animation: zoom-down .7s ease forwards; }
 
 #board {
   width: 50rem;
@@ -96,13 +96,18 @@ h1 {
   z-index: 100; }
 
 #results-text {
-  font-size: 4rem; }
+  font-size: 4rem;
+  display: block;
+  opacity: 0;
+  animation: zoom-in .2s .3s ease-in forwards; }
 
 #new-game {
   background: var(--background);
   width: 90%;
   height: 8rem;
-  margin-top: 2rem; }
+  margin-top: 2rem;
+  opacity: 0;
+  animation: zoom-in .2s .9s ease-in forwards; }
 
 #new-game:hover {
   background: var(--font-color);
@@ -175,10 +180,18 @@ input[type="radio"] {
   100% {
     display: none; } }
 
-@keyframes zoom-in {
+@keyframes zoom-down {
   0% {
     opacity: 0;
     transform: scale(1.5); }
+  100% {
+    opacity: 1;
+    transform: scale(1); } }
+
+@keyframes zoom-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.3); }
   100% {
     opacity: 1;
     transform: scale(1); } }
