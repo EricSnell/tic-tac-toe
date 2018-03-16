@@ -17,7 +17,7 @@
 
   const $board = document.getElementById('board');
   const $results = document.getElementById('results');
-  const $resultsText = $results.querySelector('#results-text');
+  const $resultsText = $results.querySelector('#results__text');
   const $newGameButton = $results.querySelector('#new-game');
   const $playerSelect = document.getElementById('players-select');
   const $characterSelect = document.getElementById('character-select');
